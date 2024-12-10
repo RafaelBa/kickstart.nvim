@@ -192,6 +192,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Key binding inspired by lazyvim https://www.lazyvim.org/configuration/general#keymaps
 vim.keymap.set('n', '<leader>bd', '<cmd>bdel<cr>', { desc = 'Delete Buffer' })
+vim.keymap.set('n', '<leader>|', '<cmd>vsplit<cr>', { desc = 'Split window Right' })
+vim.keymap.set('n', '<leader>-', '<cmd>split<cr>', { desc = 'Split window Down' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
