@@ -1,2 +1,4 @@
-vim.o.spell = true
-vim.o.spelllang = 'de,en'
+vim.opt.relativenumber = true
+-- spellchecking
+vim.opt.spell = true
+vim.opt.spelllang = 'en_gb,de'
