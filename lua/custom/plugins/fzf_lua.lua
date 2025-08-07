@@ -43,7 +43,8 @@ return {
     { '<leader>msh', '<cmd>FzfLua help_tags<cr>', desc = 'Help Pages' },
     { '<leader>msH', '<cmd>FzfLua highlights<cr>', desc = 'Search Highlight Groups' },
     { '<leader>msj', '<cmd>FzfLua jumps<cr>', desc = 'Jumplist' },
-    { '<leader>msk', '<cmd>FzfLua keymaps<cr>', desc = 'Key Maps' },
+    -- deactivated in favour of snacks key maps
+    -- { '<leader>msk', '<cmd>FzfLua keymaps<cr>', desc = 'Key Maps' },
     { '<leader>msl', '<cmd>FzfLua loclist<cr>', desc = 'Location List' },
     { '<leader>msM', '<cmd>FzfLua man_pages<cr>', desc = 'Man Pages' },
     { '<leader>msm', '<cmd>FzfLua marks<cr>', desc = 'Jump to Mark' },
