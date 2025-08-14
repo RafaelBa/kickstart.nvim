@@ -231,3 +231,6 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
 
+## The Refactoring
+This kickstart.nvim repo is going through a refactoring to better reflect a modular approach and be tied together with my nvim config in my dotfiles. 
+The goal is that this repo will only house code relevant to plugins, plugin-systems, and all configurations around this.
