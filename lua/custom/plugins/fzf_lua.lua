@@ -20,12 +20,15 @@ return {
     -- TODO: Not sure if I'll need these
     -- { "<c-j>", "<c-j>", ft = "fzf", mode = "t", nowait = true },
     -- { "<c-k>", "<c-k>", ft = "fzf", mode = "t", nowait = true },
-    { '<leader>m/', '<cmd>FzfLua live_grep<cr>', desc = 'Grep (Root Dir)' },
+    { '<leader>/', '<cmd>FzfLua live_grep<cr>', desc = 'Grep (Root Dir)' },
     { '<leader>m:', '<cmd>FzfLua command_history<cr>', desc = 'Command History' },
     { '<leader>m<space>', '<cmd>FzfLua files<cr>', desc = 'Find Files (Root Dir)' },
     -- find
-    { '<leader>mfb', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
-    { '<leader>mff', '<cmd>FzfLua files<cr>', desc = 'Find Files (Root Dir)' },
+    { '<leader>fb', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
+    { '<leader>ff', '<cmd>FzfLua files<cr>', desc = 'Find Files (Root Dir)' },
+    { '<leader>fF', '<cmd>FzfLua files root=false<cr>', desc = 'Find Files (Root Dir)' },
+    -- { '<leader>fF', require('fzf-lua').files { root = false }, desc = 'Find Files (cwd)' },
+
     { '<leader>mfg', '<cmd>FzfLua git_files<cr>', desc = 'Find Files (git-files)' },
     { '<leader>mfr', '<cmd>FzfLua oldfiles<cr>', desc = 'Recent' },
     -- git
@@ -39,7 +42,7 @@ return {
     { '<leader>msC', '<cmd>FzfLua commands<cr>', desc = 'Commands' },
     { '<leader>msd', '<cmd>FzfLua diagnostics_document<cr>', desc = 'Document Diagnostics' },
     { '<leader>msD', '<cmd>FzfLua diagnostics_workspace<cr>', desc = 'Workspace Diagnostics' },
-    { '<leader>msg', '<cmd>FzfLua live_grep<cr>', desc = 'Grep (Root Dir)' },
+    { '<leader>sg', '<cmd>FzfLua live_grep<cr>', desc = 'Grep (Root Dir)' },
     { '<leader>msh', '<cmd>FzfLua help_tags<cr>', desc = 'Help Pages' },
     { '<leader>msH', '<cmd>FzfLua highlights<cr>', desc = 'Search Highlight Groups' },
     { '<leader>msj', '<cmd>FzfLua jumps<cr>', desc = 'Jumplist' },
