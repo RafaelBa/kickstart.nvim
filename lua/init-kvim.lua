@@ -774,6 +774,11 @@ require('lazy').setup({
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
+
+      -- fix too dark line numbers
+      vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#5b6281', bold = true })
+      -- vim.api.nvim_set_hl(0, 'LineNr', { fg='white', bold=true })
+      vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#5b6281', bold = true })
     end,
   },
 
