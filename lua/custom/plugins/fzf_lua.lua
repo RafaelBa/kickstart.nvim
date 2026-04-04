@@ -1,3 +1,22 @@
+local find_opts_helpers = {
+  orig_opt = [[-type f \! -path '*/.git/*' \! -path '*/.jj/*']],
+  wildcardignore_replace = "\\! -path './",
+}
+
+local files_picker = function()
+  local wildignore_as_find = string.gsub(vim.o.wildignore, ',', "' " .. find_opts_helpers.wildcardignore_replace)
+  if wildignore_as_find ~= '' then
+    wildignore_as_find = ' ' .. find_opts_helpers.wildcardignore_replace .. wildignore_as_find .. "'"
+  end
+
+  local find_options = find_opts_helpers.orig_opt .. wildignore_as_find
+  local opts = {
+    find_opts = find_options,
+  }
+
+  FzfLua.files(opts)
+end
+
 return {
   'ibhagwan/fzf-lua',
   cmd = 'FzfLua',
@@ -25,7 +44,7 @@ return {
     { '<leader>m<space>', '<cmd>FzfLua files<cr>', desc = 'Find Files (Root Dir)' },
     -- find
     { '<leader>fb', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
-    { '<leader>ff', '<cmd>FzfLua files<cr>', desc = 'Find Files (Root Dir)' },
+    { '<leader>ff', files_picker, desc = 'Find Files (Root Dir)' },
     { '<leader>fF', '<cmd>FzfLua files root=false<cr>', desc = 'Find Files (Root Dir)' },
     -- { '<leader>fF', require('fzf-lua').files { root = false }, desc = 'Find Files (cwd)' },
 
