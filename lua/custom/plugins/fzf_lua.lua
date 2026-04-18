@@ -94,5 +94,19 @@ return {
     --     end,
     --     desc = 'Goto Symbol (Workspace)',
     --   },
+    {
+      '<leader>fm',
+      function()
+        FzfLua.marks { marks = '%a' }
+      end,
+      desc = 'named [m]arks',
+    },
+    {
+      '<leader>fM',
+      function()
+        FzfLua.marks()
+      end,
+      desc = 'all [M]arks',
+    },
   },
 }
