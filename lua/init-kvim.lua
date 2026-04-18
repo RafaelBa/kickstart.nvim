@@ -613,10 +613,29 @@ require('lazy').setup({
         mode = '',
         desc = '[F]ormat buffer',
       },
+      -- NOTE: makeshift version of https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
+      {
+        '<leader>uf',
+        function()
+          vim.b.conform_disable_autoformat = not vim.b.conform_disable_autoformat
+        end,
+        desc = 'Toggle buffer auto[f]ormat',
+      },
+      {
+        '<leader>uF',
+        function()
+          vim.g.conform_disable_autoformat = not vim.g.conform_disable_autoformat
+        end,
+        desc = 'Toggle global auto[F]ormat',
+      },
     },
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.g.conform_disable_autoformat or vim.b[bufnr].conform_disable_autoformat then
+          return
+        end
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
