@@ -1,3 +1,13 @@
+-- TODO: Todo list of lazyvim features I want to migrate to my config
+-- - [ ] `:grep` command calls `rg` and writes into a tempfile:
+--   - noice message: grep <my-string> path/of/folders/** :!rg --vimgrep <my-string> path/to/folders/** 2>&1| tee /var/folders/tb/s8vl40hn2gq392h205w277r80000gn/T/nvim.suffix/Gza5xb/11
+-- - [ ] Indent guidelines
+-- - [ ] Inlay hints (with a toggle to deactivate on <leader>uh)
+-- - [ ] nerdfont / webicons in neo-tree
+-- - [ ] remove `~` character in empty lines at the bottom of files
+-- - [ ] (optional) current line number is left aligned, like relative numbers
+-- - [ ] increase padding between line numbers and file content
+
 -- FIXME: This is a copy of init-kickstart.lua with some adjustments - make sure to eliminate duplicate code and introduce a common base
 
 -- Set <space> as the leader key
@@ -161,11 +171,13 @@ local append_table = function(t1, t2)
   return t1
 end
 
+local lvim_conf = require 'lvim'
+
 local plugins_configs = append_table(
   append_table(require 'editor', {
-    -- TODO: Add `lvim` plugins here
+    lvim_conf.lazyplugins,
   }),
-  { { import = 'custom.plugins' } }
+  { { import = 'lvim.plugins' } }
 )
 
 -- [[ Configure and install plugins ]]
@@ -197,3 +209,6 @@ require('lazy').setup(plugins_configs, {
     },
   },
 })
+
+lvim_conf.set_options()
+lvim_conf.set_keymaps()
