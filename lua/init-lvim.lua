@@ -3,7 +3,7 @@
 --   - noice message: grep <my-string> path/of/folders/** :!rg --vimgrep <my-string> path/to/folders/** 2>&1| tee /var/folders/tb/s8vl40hn2gq392h205w277r80000gn/T/nvim.suffix/Gza5xb/11
 -- - [ ] Indent guidelines
 -- - [ ] Inlay hints (with a toggle to deactivate on <leader>uh)
--- - [ ] nerdfont / webicons in neo-tree
+-- - [x] nerdfont / webicons in neo-tree
 -- - [ ] remove `~` character in empty lines at the bottom of files
 -- - [ ] (optional) current line number is left aligned, like relative numbers
 -- - [ ] increase padding between line numbers and file content
