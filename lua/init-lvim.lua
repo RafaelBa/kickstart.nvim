@@ -7,28 +7,13 @@
 -- - [ ] remove `~` character in empty lines at the bottom of files
 -- - [ ] (optional) current line number is left aligned, like relative numbers
 -- - [ ] increase padding between line numbers and file content
+-- - [ ] display set `:mark` if available
+-- - [ ] Small hint when search that shows `[1/5]`
 
 -- FIXME: This is a copy of init-kickstart.lua with some adjustments - make sure to eliminate duplicate code and introduce a common base
 
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
-
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
-
--- Make line numbers default
-vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+local lvim_conf = require 'lvim'
+lvim_conf.set_options()
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -171,8 +156,6 @@ local append_table = function(t1, t2)
   return t1
 end
 
-local lvim_conf = require 'lvim'
-
 local plugins_configs = append_table(
   append_table(require 'editor', {
     lvim_conf.lazyplugins,
@@ -210,5 +193,4 @@ require('lazy').setup(plugins_configs, {
   },
 })
 
-lvim_conf.set_options()
 lvim_conf.set_keymaps()
