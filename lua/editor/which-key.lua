@@ -53,6 +53,7 @@ return {
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>q', group = '[Q]uit' },
       { '<leader>m', group = '[M]ore plugins (under verification)' },
+      { 'zG', group = 'Add spelling to...' },
     },
   },
 }
