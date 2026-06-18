@@ -6,5 +6,6 @@ return {
 
     -- set GitSigns' current line blame to a easier to read colour
     vim.api.nvim_set_hl(0, 'GitSignsCurrentLineBlame', { fg = '#827344' })
+    vim.api.nvim_set_hl(0, 'SpellBad', { sp = '#ff966c', undercurl = true })
   end,
 }
