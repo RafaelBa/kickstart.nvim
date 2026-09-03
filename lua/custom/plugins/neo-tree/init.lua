@@ -1,3 +1,4 @@
+local filtered_items = require 'custom.plugins.neo-tree.filtered_items'
 -- Neo-tree is a Neovim plugin to browse the file system
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
@@ -20,6 +21,7 @@ return {
           ['<leader>e'] = 'close_window',
         },
       },
+      filtered_items = require 'custom.plugins.neo-tree.filtered_items',
     },
   },
 }
